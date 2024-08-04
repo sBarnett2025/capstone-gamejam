@@ -9,8 +9,6 @@ public class dragAndDrop : MonoBehaviour
     // Start is called before the first frame update
 
     Vector3 mousePos;
-    Vector3 resetter = Vector3.up;
-    float rotatorFX = 90f;
 
     private Vector3 getMousePos()
     {
@@ -30,14 +28,11 @@ public class dragAndDrop : MonoBehaviour
         {
             pos.y = 1;
         }
+
+        pos.x = Mathf.Round(pos.x);
+        pos.z = Mathf.Round(pos.z);
+
        transform.position = pos;
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            transform.Rotate(0f, rotatorFX, 0f);
-        }
-    }
 }
