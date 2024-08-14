@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/DragnDrop.unity
+    guid: a02a2d69c02e52a44bca46711b67caee
   m_configObjects: {}

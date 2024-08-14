@@ -52,7 +52,6 @@ public class CheckPosition : MonoBehaviour
         {
             CheckPos(objects[i], correctPositions[i], lines[i]);
         }
-        Debug.Log(totalScore);
     }
 
     void CheckPos(GameObject obj, Vector3 correctPos, LineRenderer line)
