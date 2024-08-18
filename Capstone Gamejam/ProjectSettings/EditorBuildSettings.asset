@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DragnDrop.unity
     guid: a02a2d69c02e52a44bca46711b67caee
+  - enabled: 1
+    path: Assets/Scenes/ModelDemos.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/NavigableLevel.unity
+    guid: 352a4dd8bc4ef9e40816a7fa313b44ae
+  - enabled: 1
+    path: Assets/Scenes/House1.unity
+    guid: 83bd518a4de33b94db2b7bc8444fed9e
   m_configObjects: {}

@@ -833,10 +833,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14032f6b02ee84f4eaa406ea81013f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceReqForCorrect: 1
   objects: []
-  correctPositions: []
+  correctPositions:
+  - {x: 1, y: 1, z: 2}
+  - {x: 0, y: 0, z: 0}
+  correctNames:
+  - 
   linePrefab: {fileID: 4277693048097141173, guid: f52574345cab62a4ebf07cbbc152f3c7, type: 3}
   lines: []
+  replacement: {fileID: 0}
 --- !u!4 &1252484797
 Transform:
   m_ObjectHideFlags: 0

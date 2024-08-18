@@ -9,6 +9,8 @@ public class dragAndDrop : MonoBehaviour
     // Start is called before the first frame update
 
     Vector3 mousePos;
+    public string objectName;
+    public GameObject replacement;
 
     private Vector3 getMousePos()
     {
