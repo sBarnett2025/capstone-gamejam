@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House2
       objectReference: {fileID: 0}
+    - target: {fileID: 2624493991763694552, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
+      propertyPath: levelIGoTo
+      value: House2
+      objectReference: {fileID: 0}
     - target: {fileID: 8829244464858405598, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74731
@@ -399,6 +403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House4
       objectReference: {fileID: 0}
+    - target: {fileID: 2624493991763694552, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
+      propertyPath: levelIGoTo
+      value: House4
+      objectReference: {fileID: 0}
     - target: {fileID: 8829244464858405598, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74731
@@ -466,7 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624493991763694552, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
       propertyPath: levelIGoTo
-      value: ModelDemos
+      value: House5
       objectReference: {fileID: 0}
     - target: {fileID: 8829244464858405598, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
       propertyPath: m_LocalScale.y
@@ -527,6 +535,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1014156384993137589, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
       propertyPath: m_Name
+      value: House3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624493991763694552, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
+      propertyPath: levelIGoTo
       value: House3
       objectReference: {fileID: 0}
     - target: {fileID: 8829244464858405598, guid: 3e30bcc3dfa40b6499dc77bf96d36d68, type: 3}
@@ -855,7 +867,7 @@ SceneRoots:
   - {fileID: 770598071}
   - {fileID: 1251432974}
   - {fileID: 9132405996412472812}
-  - {fileID: 1425896815}
-  - {fileID: 1922838921}
   - {fileID: 231888426}
+  - {fileID: 1922838921}
   - {fileID: 1295476188}
+  - {fileID: 1425896815}

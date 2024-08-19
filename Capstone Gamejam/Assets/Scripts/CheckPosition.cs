@@ -30,7 +30,6 @@ public class CheckPosition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(correctPositions.Count);
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -44,6 +43,25 @@ public class CheckPosition : MonoBehaviour
             // add line 
             /*GameObject l = Instantiate(linePrefab);
             lines.Add(l.GetComponent<LineRenderer>());*/ //debug
+        }
+
+        //check the inventory to see if an item of the same name has already
+        if (GameObject.Find("Inventory") != null)
+        {
+            for (int i = 0; i < correctNames.Count; i++)
+            {
+                Debug.Log(correctNames[i]);
+                for (int j = 0; j < GameObject.Find("Inventory").GetComponent<Inventory>().placedItems.Count; j++)
+                {
+                    Debug.Log(GameObject.Find("Inventory").GetComponent<Inventory>().placedItems[j]);
+                    if (GameObject.Find("Inventory").GetComponent<Inventory>().placedItems[j] == correctNames[i])
+                    {
+                        Debug.Log("Item placed already");
+                        correctNames.Remove(correctNames[i]);
+                        correctPositions.Remove(correctPositions[i]);
+                    }
+                }
+            }
         }
     }
 
@@ -72,22 +90,28 @@ public class CheckPosition : MonoBehaviour
         if (distance < distanceReqForCorrect)
         {
             obj.transform.position = correctPos;
+            //Debug.Log("Contact");
             //if the object is in the correct place and mouse button is released, place object down, get rid of this object
             
             if (Input.GetMouseButton(0) == false)
             {
                 if (obj.GetComponent<dragAndDrop>() != null)
                 {
-                    Debug.Log("Parent name is: ");
+                    /*Debug.Log("Parent name is: ");
                     Debug.Log(correctName);
                     Debug.Log("Child name is: ");
-                    Debug.Log(obj.GetComponent<dragAndDrop>().name);
+                    Debug.Log(obj.GetComponent<dragAndDrop>().objectName);*/
                     if (obj.GetComponent<dragAndDrop>().objectName == correctName && obj.GetComponent<dragAndDrop>().replacement != null)
                     {//also makes sure not to try to do this if there's no replacement object.
                         Instantiate(obj.GetComponent<dragAndDrop>().replacement, obj.transform.position, obj.transform.rotation);
                         objects.Remove(obj);
                         correctNames.Remove(correctName);
                         correctPositions.Remove(correctPos);
+                        if (GameObject.Find("Inventory") != null)
+                        {
+                            GameObject.Find("Inventory").GetComponent<Inventory>().placedItems.Add(correctName);
+                            GameObject.Find("Inventory").GetComponent<Inventory>().itemsHeld.Remove(correctName);
+                        }
                         Destroy(obj);
                     }
                 }
