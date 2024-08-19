@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    [SerializeField] private GameObject selfPrefab;
+    [SerializeField] private string objectName;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,9 @@ public class Collectable : MonoBehaviour
         
     }
 
-    public GameObject Collect() 
+    public string Collect() 
     {
         //add to inventory once that exists.
-        return selfPrefab;
+        return objectName;
     }
 }

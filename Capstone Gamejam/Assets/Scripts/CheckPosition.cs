@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckPosition : MonoBehaviour
 {
@@ -50,10 +51,10 @@ public class CheckPosition : MonoBehaviour
         {
             for (int i = 0; i < correctNames.Count; i++)
             {
-                Debug.Log(correctNames[i]);
+                //Debug.Log(correctNames[i]);
                 for (int j = 0; j < GameObject.Find("Inventory").GetComponent<Inventory>().placedItems.Count; j++)
                 {
-                    Debug.Log(GameObject.Find("Inventory").GetComponent<Inventory>().placedItems[j]);
+                    //Debug.Log(GameObject.Find("Inventory").GetComponent<Inventory>().placedItems[j]);
                     if (GameObject.Find("Inventory").GetComponent<Inventory>().placedItems[j] == correctNames[i])
                     {
                         Debug.Log("Item placed already");
@@ -113,6 +114,41 @@ public class CheckPosition : MonoBehaviour
                             GameObject.Find("Inventory").GetComponent<Inventory>().itemsHeld.Remove(correctName);
                         }
                         Destroy(obj);
+
+                        float buildCount = 0;
+                        for (int i  = 0; i < correctPositions.Count; i++)
+                        {
+                            buildCount += correctPositions[i].x;
+                            buildCount += correctPositions[i].y;
+                            buildCount += correctPositions[i].z;
+                        }
+
+                        if (buildCount == 0)
+                        {
+                            string sceneName;
+                            sceneName = SceneManager.GetActiveScene().name;
+                            if (GameObject.Find("ColorController") != null)
+                            {
+                                if (sceneName == "House1")
+                                {
+                                    GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings[0] = true;
+                                } else if (sceneName == "House2")
+                                {
+                                    GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings[1] = true;
+                                } else if (sceneName == "House3")
+                                {
+                                    GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings[2] = true;
+                                }
+                                else if (sceneName == "House4")
+                                {
+                                    GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings[3] = true;
+                                }
+                                else if (sceneName == "House5")
+                                {
+                                    GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings[4] = true;
+                                }
+                            }
+                        }
                     }
                 }
             }

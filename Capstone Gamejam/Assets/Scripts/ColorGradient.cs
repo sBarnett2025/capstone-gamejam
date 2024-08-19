@@ -14,6 +14,16 @@ public class ColorGradient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.Find("ColorController") != null)
+        {
+            for (int i = 0; i < GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings.Count; i++)
+            {
+                if (GameObject.Find("ColorController").GetComponent<ColorControl>().completedBuildings[i])
+                {
+                    progressLevel += 2;
+                }
+            }
+        }
     }
 
     // Update is called once per frame

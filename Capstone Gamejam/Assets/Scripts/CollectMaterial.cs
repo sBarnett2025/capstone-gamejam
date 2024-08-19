@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class CollectMaterial : MonoBehaviour
 {
-    public List<GameObject> fauxInventory;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +16,10 @@ public class CollectMaterial : MonoBehaviour
             {
                 if (hit.collider.GetComponent<Collectable>() != null)
                 {
-                    fauxInventory.Add(hit.collider.GetComponent<Collectable>().Collect());
+                    if (GameObject.Find("Inventory")  != null)
+                    { //add the clicked on item to the inventory
+                        GameObject.Find("Inventory").GetComponent<Inventory>().itemsHeld.Add(hit.collider.GetComponent<Collectable>().Collect());
+                    } //there easily could be an item limit by preventing this if itemsHeld is longer than 8, but whatever.
                     Destroy(hit.collider.gameObject);
                 }
             }
